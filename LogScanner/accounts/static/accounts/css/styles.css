@@ -1,0 +1,68 @@
+body, html {
+    height: 100%;
+    /* margin: 0; */
+    /* display: flex; */
+    justify-content: center;
+    /* align-items: center; */
+    /* background-image: url('{% static "accounts/images/background.webp" %}'); */
+    background-size: cover;
+    /* background-position: center; */
+}
+
+/* test Video background specific styles it works
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; /* Ensures video stays in the background */
+   /* background-size: cover;
+} */
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(58 69 74 / 13%); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #90b6ce;
+    width: fit-content;
+    min-width: 150px; 
+    color: #fff; /*  color du  contents */
+}
+
+
+input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50; /*coleur du bouton */
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+/* colors qui convient l'imagedu background */
+.form-container label{
+    color: #E8E8E8;
+} 
+
+.form-container input {
+    color: #0c0b0b; /* background for better visibility */
+}
+
+.form-container input::placeholder {
+    color: #B0B0B0; /*  for placeholders */
+}
