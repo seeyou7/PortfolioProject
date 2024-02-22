@@ -16,3 +16,4 @@ def register(request):
         form = UserRegisterForm()
          #messages.error(request, 'Invalid username or password') to check later when dashbork isOK
     return render(request, 'accounts/register.html', {'form': form})
+
