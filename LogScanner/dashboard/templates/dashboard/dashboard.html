@@ -1,9 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="dashboard">
-    <h2>Dashboard</h2>
-
-</div>
+    <div class="dashboard-container">
+        <h1>My Dashboard</h1>
+        <p> click on one of this button to run a scan and wait, once you the scan is finished you can start other one </p>
+        <!--  Application Logs -->
+        <a href="{% url 'app_logs' %}" class="btn app-logs-btn">Application Logs</a>
+        <!--  Authentication Logs -->
+        <a href="{% url 'auth_logs' %}" class="btn auth-logs-btn">Authentication Logs</a>
+        <!--  Network Logs -->
+        <a href="{% url 'network_logs' %}" class="btn network-logs-btn">Network Logs</a>
+    </div>
+    
 
 {% endblock %}
