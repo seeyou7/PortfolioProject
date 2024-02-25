@@ -6,21 +6,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My LogScannerAPP{% endblock %}</title>
-    <!--<link rel="stylesheet" href="../static/accounts/css/slyles.css"> to Moved for global use -->
+    <!-- <link rel="stylesheet" href="../static/accounts/css/slyles.css"> to Moved for global use -->
     <link rel="stylesheet" href="{% static 'accounts/css/styles.css' %}">
 
     
-    <style>
+    <!-- <style>
         body {
-            background-image: url('{% static "accounts/images/background.webp" %}');
-            background-position: cover;
-            color: #fff; /*  text color  */
-        }
-    </style>
+            /* background-image: url('{% static "accounts/images/background.webp" %}');
+            background-position: cover; */
+            color: #fff; /*  text color */
+       } 
+    </style>  -->
 
     {% block extra_css %}{% endblock %}
 </head>
-<body>
+<body class="{% if not is_analysis_page %}default-background{% else %}analysis-page-background{% endif %}">
+   
     <!-- for background video
         <video autoplay loop muted playsinline id="background-video">
             <source src="{% static 'accounts/videos/vidbackground.mp4' %}" type="video/mp4">
@@ -30,7 +31,7 @@
     
     
     <header>
-        <h1>Welcome to My Django Project</h1>
+        <h1>Welcome to VulnDetective</h1>
         <nav>
             <ul>
                 {% if not request.user.is_authenticated %}
