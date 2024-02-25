@@ -1,10 +1,57 @@
 body, html {
     height: 100%;
     margin: 0; /* Uncomment this to remove default margin */
-    /*background-image: url('{% static "accounts/images/background.webp" %}');*/
+    /* background-image: url('{% static "accounts/images/background.webp" %}'); */
     background-size: cover;
     background-position: center; /* Corrected to 'center' */
+    color: #fff;
 }
+
+/* New CSS classes for conditional backgrounds in base*/
+.default-background {
+    background-image: url('../images/background.webp'); /* Adjust the path as needed */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.analysis-page-background {
+    background-color: #030000;
+    color: #fff;
+}
+
+.btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.app-logs-btn {
+    background-color: #4E9A06; /* Green */
+}
+
+.auth-logs-btn {
+    background-color: #C4A000; /* Amber */
+}
+
+.network-logs-btn {
+    background-color: #3465A4; /* Blue */
+}
+
+.btn:hover {
+    background-color: #083c61; /* Darker shade on hover */
+}
+
+.dashboard-container {
+    text-align: center; /* Center the content */
+    margin: auto;
+    width: 80%; /* Adjust based on your design */
+    padding: 20px;
+}
+
 
 /* test Video background specific styles it works
 #background-video {
