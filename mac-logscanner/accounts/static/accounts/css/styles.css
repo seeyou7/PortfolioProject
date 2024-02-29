@@ -1,35 +1,65 @@
+/* Reset CSS */
+* {
+    margin: 15;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body, html {
     height: 100%;
-    /*margin: 0;*/
-    /*display: flex;*/
-    justify-content: center;
-    /*align-items: center;*/
+    margin: 0; /* Uncomment this to remove default margin */
     /* background-image: url('{% static "accounts/images/background.webp" %}'); */
     background-size: cover;
+    /*background-position: center; /* Corrected to 'center' */
+    color: #fff;
+}
+
+/* New CSS classes for conditional backgrounds in base*/
+.default-background {
+    background-image: url('../images/background.webp'); /* Adjust the path as needed */
+    background-size: cover;
     /*background-position: center;*/
-}
-header {
-    text-align: center;
+    color: #fff;
 }
 
-nav {
-    position: fixed;
-    top: 20px;
-    right: 20px;
+.analysis-page-background {
+    background-color: #030000;
+    color: #fff;
 }
-nav a {
+
+.btn {
     display: inline-block;
-    margin-left: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #0a5185;
+    margin: 10px;
     padding: 10px 20px;
-    border-radius: 5px;
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline from links */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+.app-logs-btn {
+    background-color: #4E9A06; /* Green */
 }
 
-nav a:hover {
-    opacity: 0.8;
+.auth-logs-btn {
+    background-color: #C4A000; /* Amber */
 }
+
+.network-logs-btn {
+    background-color: #3465A4; /* Blue */
+}
+
+.btn:hover {
+    background-color: #083c61; /* Darker shade on hover */
+}
+
+.dashboard-container {
+    text-align: center; /* Center the content */
+    margin: auto;
+    width: 80%; /* Adjust based on your design */
+    padding: 20px;
+}
+
+
 /* test Video background specific styles it works
 #background-video {
     position: fixed;
@@ -43,19 +73,75 @@ nav a:hover {
    /* background-size: cover;
 } */
 
-.form-container {  
+header {
+    display: flex;
+    justify-content: center; /* Centers children horizontally */
+    align-items: center; /* Centers children vertically, useful if you add height to header/footer */
+    width: 100%; /* Ensure header and footer span the full width */
+}
+/* nav li {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+nav a{
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #0a5185;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+    
+nav li:hover {
+    opacity: 0.8; 
+
+} */
+/* nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Adds space between navigation links */
+/*} */
+nav ul {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    list-style: none; /* Removes bullet points */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    display: flex; /* Lays out the list items in a row */
+}
+
+nav a {
+    display: inline-block;
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: #0a5185;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+
+.form-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 150px;
-    background: rgba(58 69 74 / 13%);
+    padding: 160px;
+    background: rgba(58, 69, 74, 0.13); /* Corrected RGBA syntax */
     border-radius: 10px;
-    box-shadow: 0 40px 8px #90b6ce
+    box-shadow: 0 4px 8px #90b6ce;
     width: fit-content;
     min-width: 150px;
-    color: #fff;
-
+    color: #fff; /* Text color */
 }
 
 input[type="text"], input[type="password"], input[type="email"], input[type="submit"] {
@@ -63,11 +149,11 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sub
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding doesn't increase the element's size */
 }
 
 input[type="submit"] {
-    background-color: #4CAF50; /*coleur du bouton */
+    background-color: #c92843; /* Button color */
     color: white;
     cursor: pointer;
 }
@@ -76,26 +162,30 @@ input[type="submit"]:hover {
     opacity: 0.8;
 }
 
-/* colors qui convient l'imagedu background */
+/* Adjustments for better visibility against the background image */
 .form-container label{
-    color: #ffffff;
+    color: #E8E8E8;
 } 
 
 .form-container input {
-    color: #0c0b0b; /* background for better visibility */
+    color: #0c0b0b; /* Text color for better visibility */
 }
 
 .form-container input::placeholder {
-    color: #ffffff; /*  for placeholders */
+    color: #B0B0B0; /* Placeholder text color */
 }
 
 footer {
+    display: flex;
+    justify-content: flex-end; /* Aligns footer content to the right */
+    align-items: center; /* Centers footer content vertically */
     position: fixed;
     bottom: 0;
     left: 0;
-    padding: 10px; /* Adjust padding as needed */
-    color: rgb(255, 255, 255); /* Adjust text color as needed */
-    background: none; /* Remove background */
-}
+    width: 100%; /* Ensures footer spans the full width of the viewport */
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    background: none;
 
+}
 
