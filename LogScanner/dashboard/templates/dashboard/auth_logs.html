@@ -2,5 +2,9 @@
 
 {% block content %}
 <h2>Auth Log Analysis</h2>
-<!-- Display your analysis results here -->
+{% if analysis_results %}
+<pre>{{ analysis_results|safe }}</pre>
+{% else %}
+<p>No results to display.</p>
+{% endif %}
 {% endblock %}
