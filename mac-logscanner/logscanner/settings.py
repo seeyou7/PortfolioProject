@@ -71,6 +71,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'logscanner.wsgi.application'
 
+#path for logs files
+LOG_FILE_PATHS = {
+    'application': '/Users/saima/Desktop/logs_analysis/app.log',
+    'auth': '/Users/saima/Desktop/logs_analysis/auth.log',
+    'network': '/Users/saima/Desktop/logs_analysis/net.log',
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
