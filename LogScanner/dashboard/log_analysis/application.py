@@ -1,11 +1,10 @@
-# log_analysis/application.py
 from django.conf import settings
 import re
 from datetime import datetime
 from collections import defaultdict
 
 def analyze_application_logs(log_content):
-    # Define a pattern that matches the various application log entries
+    # Definir les patt important de le fichier
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) IP=(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) UserID=(?P<userid>\w+) Action=(?P<action>[A-Za-z]+) (DocumentID=(?P<documentid>\d+))? Status=(?P<status>\w+)(?: Reason=(?P<reason>[\w\s]+))?'
     
     action_counts = defaultdict(int)
@@ -15,9 +14,11 @@ def analyze_application_logs(log_content):
     
     lines = log_content.split('\n')
     for line in lines:
-        if line.strip():  # Ensure the line is not empty
+        if line.strip():  # gerer not empty
             match = re.match(pattern, line)
-            if match:  # If the line matches the pattern
+             # If the line matches the pattern
+
+            if match: 
                 parsed_line = match.groupdict()
                 action = parsed_line['action']
                 status = parsed_line['status']
@@ -30,7 +31,7 @@ def analyze_application_logs(log_content):
                 
                 if documentid:
                     document_access[documentid][status] += 1
-    
+    #compilatoin (ok)
     analysis_results = {
         'action_counts': dict(action_counts),
         'status_counts': dict(status_counts),
@@ -40,6 +41,10 @@ def analyze_application_logs(log_content):
     
     return analysis_results
 
+
+
+
+# old func ca fonctionnnnnnnnnne / 
 # from django.http import HttpResponse
 # def test_log_path(request):
 #     app_log_path = settings.LOG_FILE_PATHS.get('application')

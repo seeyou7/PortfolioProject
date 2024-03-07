@@ -1,4 +1,3 @@
-# log_analysis/network.py
 from django.conf import settings
 import re
 from collections import defaultdict
@@ -24,9 +23,10 @@ def analyze_network_logs(log_content):
                 if "SELECT" in parsed_line.get('payload', '') and "--" in parsed_line.get('payload', ''):
                     sql_injection_attempts.append(parsed_line)
     
-    # Analyze for DDoS by counting requests per destination IP
-    potential_ddos = {dest_ip: count for dest_ip, count in ddos_attempts.items() if count > threshold}  # Define your threshold
+    # Analyzer  DDoS en  counting requests per destination IP ca  marche pour le moment
+    potential_ddos = {dest_ip: count for dest_ip, count in ddos_attempts.items() if count > threshold}  
     
+    #compilation (ok)
     analysis_results = {
         'potential_ddos': potential_ddos,
         'sql_injection_attempts': sql_injection_attempts,
