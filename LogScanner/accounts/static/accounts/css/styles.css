@@ -1,17 +1,17 @@
 body, html {
     height: 100%;
-    margin: 0; /* Uncomment this to remove default margin */
+    margin: 0;
     /* background-image: url('{% static "accounts/images/background.webp" %}'); */
     background-size: cover;
-    background-position: center; /* Corrected to 'center' */
+    /* background-position: center; Corrected to 'center' */
     color: #fff;
 }
 
-/* New CSS classes for conditional backgrounds in base*/
+/* New CSS classes pour gerer la  condition de transition */
 .default-background {
-    background-image: url('../images/background.webp'); /* Adjust the path as needed */
+    background-image: url('../images/background.webp'); 
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     color: #fff;
 }
 
@@ -24,31 +24,31 @@ body, html {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    color: #fff; /* Text color */
-    text-decoration: none; /* Remove underline from links */
-    border-radius: 5px; /* Rounded corners for the button */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    color: #fff; 
+    text-decoration: none; /* Remove underline from links to apply in end of the prjjjjjjj */
+    border-radius: 5px; /* Rounded corners  button */
+    transition: background-color 0.3s; /* effet Smooth hover effect */
 }
 .app-logs-btn {
-    background-color: #4E9A06; /* Green */
+    background-color: #4E9A06;
 }
 
 .auth-logs-btn {
-    background-color: #C4A000; /* Amber */
+    background-color: #C4A000; /* ombre */
 }
 
 .network-logs-btn {
-    background-color: #3465A4; /* Blue */
+    background-color: #3465A4; 
 }
 
 .btn:hover {
-    background-color: #083c61; /* Darker shade on hover */
+    background-color: #083c61; /*  shade on hover */
 }
 
 .dashboard-container {
-    text-align: center; /* Center the content */
+    text-align: center; 
     margin: auto;
-    width: 80%; /* Adjust based on your design */
+    width: 80%; 
     padding: 20px;
 }
 
@@ -68,9 +68,9 @@ body, html {
 
 header {
     display: flex;
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Centers children vertically, useful if you add height to header/footer */
-    width: 100%; /* Ensure header and footer span the full width */
+    justify-content: center; /*  children horizontally */
+    align-items: center; /*  children vertically */
+    width: 100%; 
 }
 /* nav li {
     position: fixed;
@@ -103,8 +103,8 @@ nav ul {
     top: 20px;
     right: 20px;
     list-style: none; /* Removes bullet points */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
+    margin: 0; 
+    padding: 0; 
     display: flex; /* Lays out the list items in a row */
 }
 
@@ -128,12 +128,12 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 160px;
-    background: rgba(58, 69, 74, 0.13); /* Corrected RGBA syntax */
+    padding: 100px;
+    background: rgba(58, 69, 74, 0.13); /*  RGBA syntax a verif */
     border-radius: 10px;
     box-shadow: 0 4px 8px #90b6ce;
     width: fit-content;
-    min-width: 150px;
+    min-width: 100px;
     color: #fff; /* Text color */
 }
 
@@ -142,11 +142,11 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sub
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Ensures padding doesn't increase the element's size */
+    box-sizing: border-box; 
 }
 
 input[type="submit"] {
-    background-color: #c92843; /* Button color */
+    background-color: #c92843; 
     color: white;
     cursor: pointer;
 }
@@ -155,27 +155,27 @@ input[type="submit"]:hover {
     opacity: 0.8;
 }
 
-/* Adjustments for better visibility against the background image */
+/* c le best pour  the background image */
 .form-container label{
     color: #E8E8E8;
 } 
 
 .form-container input {
-    color: #0c0b0b; /* Text color for better visibility */
+    color: #0c0b0b; /* color for better visibility according to bk */
 }
 
 .form-container input::placeholder {
-    color: #B0B0B0; /* Placeholder text color */
+    color: #B0B0B0; 
 }
 
 footer {
     display: flex;
-    justify-content: center; /* Centers footer content horizontally */
-    align-items: center; /* Centers footer content vertically */
+    justify-content: center; 
+    align-items: center; 
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%; /* Ensures footer spans the full width of the viewport */
+    width: 100%; 
     padding: 10px;
     color: rgb(255, 255, 255);
     background: none;
