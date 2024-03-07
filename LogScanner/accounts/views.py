@@ -5,11 +5,11 @@ from .forms import UserRegisterForm # to imple later
 
 def register(request):
     if request.method == "POST":
-        form = UserRegisterForm(request.POST)
+        form = UserRegisterForm(request.POST)# pople le dict with all info 
        
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            login(request, user)#connection
             #log user in afte registering
             return redirect('dashboard')
     else:

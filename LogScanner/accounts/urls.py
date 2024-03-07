@@ -8,5 +8,6 @@ urlpatterns = [
     path('register/', register, name='register'),  #  registration
     path('login/', LoginView.as_view(template_name='accounts/login.html'), name='login'),  # Built-in login view
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),  # Built-in logout view
-    
+     
 ]
+ 
