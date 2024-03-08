@@ -24,7 +24,7 @@ def analyze_network_logs(log_content):
                 if "SELECT" in parsed_line.get('payload', '') and "--" in parsed_line.get('payload', ''):
                     sql_injection_attempts.append(parsed_line)
     
-    # Analyze for DDoS by counting requests per destination IP
+    # check for DDoS( Distributed Denial of Service)by attacks requests per destination IP
     potential_ddos = {dest_ip: count for dest_ip, count in ddos_attempts.items() if count > threshold}  # Define your threshold
     
     analysis_results = {

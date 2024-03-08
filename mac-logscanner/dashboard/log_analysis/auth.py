@@ -147,28 +147,28 @@ from collections import defaultdict
 from datetime import datetime
 
 def analyze_auth_logs(log_content):
-    # Enhanced regular expression pattern to include IP addresses
+    # pattern time,IP addresses etc
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) IP=(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) User login attempt: username=(?P<username>\w+) status=(?P<status>\w+)(?: reason=(?P<reason>[\w\s]+))?'
     
-    # Initialize additional counters and structures
+    # set up additional counters and structures
     ip_attempts = defaultdict(int)
     user_attempts = defaultdict(int)
     commonly_exploited_usernames = {'admin', 'administrator', 'root'}
     exploited_username_attempts = 0
 
-    # Initialize counters for success and failure
+    #count for success and failure
     success_count = 0
     failure_count = 0
     failed_login_reasons = {}
     timestamps = []
     intervals_per_user = {}
     
-    # Process each line of the log content
+    # process each line of the log content
     lines = log_content.split('\n')
     for line in lines:
-        if line.strip():  # Ensure the line is not empty
+        if line.strip():  #line is not empty
             match = re.match(pattern, line)
-            if match:  # If the line matches the pattern
+            if match:  # if line matches the pattern
                 parsed_line = match.groupdict()
                 timestamp = datetime.strptime(parsed_line['timestamp'], '%Y-%m-%d %H:%M:%S')
                 timestamps.append(timestamp)
@@ -189,14 +189,14 @@ def analyze_auth_logs(log_content):
                     reason = parsed_line.get('reason', 'Unknown')
                     failed_login_reasons[reason] = failed_login_reasons.get(reason, 0) + 1
                     
-                    # Calculate the interval since the last attempt for each user
+                    # Calculate time gap since last try for each user
                     if len(timestamps) > 1:
                         interval = (timestamp - timestamps[-2]).total_seconds()
                         if parsed_line['username'] not in intervals_per_user:
                             intervals_per_user[parsed_line['username']] = []
                         intervals_per_user[parsed_line['username']].append(interval)
 
-    # Compile the analysis results
+    # the analysis results
     analysis_results = {
         'success_count': success_count,
         'failure_count': failure_count,
@@ -208,5 +208,5 @@ def analyze_auth_logs(log_content):
         'commonly_exploited_usernames': list(commonly_exploited_usernames),
     }
     
-    # Removed the suspicious_ips and suspicious_users from the results as threshold logic is removed
+    # removed ips and users from the results as threshold logic is removed
     return analysis_results

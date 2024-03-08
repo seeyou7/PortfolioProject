@@ -16,7 +16,7 @@ body, html {
 
 /* New CSS classes for conditional backgrounds in base*/
 .default-background {
-    background-image: url('../images/background.webp'); /* Adjust the path as needed */
+    background-image: url('../images/bground.jpeg'); /* Adjust the path as needed */
     background-size: cover;
     /*background-position: center;*/
     color: #fff;

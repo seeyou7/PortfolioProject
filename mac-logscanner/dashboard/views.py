@@ -15,14 +15,14 @@ def dashboard(request):
 
 @login_required
 def app_logs_view(request):
-    log_file_path = settings.LOG_FILE_PATHS.get('application')  # Make sure 'application' is correctly defined in settings.LOG_FILE_PATHS
-    analysis_results = {}  # Initialize to ensure it's always a dict for consistency
-
+    log_file_path = settings.LOG_FILE_PATHS.get('application')  # 'application' is defined in settings
+    analysis_results = {}  
+    
     try:
         if os.path.exists(log_file_path):
             with open(log_file_path, 'r') as file:
                 log_content = file.read()
-                # Assume analyze_application_logs returns a dictionary
+                # analyze_application_logs returns a dictionary
                 analysis_results = analyze_application_logs(log_content)
                 # Check if analysis_results is a dictionary and format it
                 if isinstance(analysis_results, dict):
@@ -30,7 +30,7 @@ def app_logs_view(request):
         else:
             analysis_results = "Application log file not found."
     except Exception as e:
-        # Catch any exception and return a simple error message
+        # return a error message
         analysis_results = f"An error occurred: {str(e)}"
 
     context = {
@@ -42,21 +42,21 @@ def app_logs_view(request):
 @login_required
 def auth_logs_view(request):
     log_file_path = settings.LOG_FILE_PATHS.get('auth')
-    analysis_results = {}  # Initialize to ensure it's always a dict for consistency
+    analysis_results = {}
 
     try:
         if os.path.exists(log_file_path):
             with open(log_file_path, 'r') as file:
                 log_content = file.read()
-                # Assume analyze_auth_logs returns a dictionary
+                # analyze_auth_logs returns a dictionary
                 analysis_results = analyze_auth_logs(log_content)
-                # Check if analysis_results is a dictionary and format it
+               
                 if isinstance(analysis_results, dict):
                     analysis_results = json.dumps(analysis_results, indent=4)
         else:
             analysis_results = "Auth log file not found."
     except Exception as e:
-        # Catch any exception and return a simple error message
+        # return error message
         analysis_results = f"An error occurred: {str(e)}"
 
     context = {
@@ -70,25 +70,25 @@ def auth_logs_view(request):
 def network_logs_view(request):
     log_file_path = settings.LOG_FILE_PATHS.get('network')
     analysis_results = {}
-    #initialiser comme dict pour eviter ce fucking prob d'affichage
+    #avoid annonying display issue
     try:
         if path.exists(log_file_path):
             with open(log_file_path, 'r') as file:
                 log_content = file.read()
-                # ok la func.py return a dict
+                # func.py return a dict
                 analysis_results = analyze_network_logs(log_content)
-                # pour verif si analysis_res i=est un dict est le formattez sur plusi line 
+                # analysis_result is a dict & format in multiple lines
                 if isinstance(analysis_results, dict):
                     analysis_results = json.dumps(analysis_results, indent=4)
         else:
             analysis_results = "Application log file not found." 
     except Exception as e:
-        # pour catcher toutes exept et returner une error simpl (ok par error pour le moment)
+        # check all exception n return error
         analysis_results = f"An error occurred: {str(e)}"
 
     context = {
         'is_analysis_page': True,
-        'analysis_results': analysis_results,  # en passe formatted json pour l'afficher sur la template (ok)
+        'analysis_results': analysis_results,  # convert json for display in template 
     }
     return render(request, 'dashboard/app_logs.html', context)
 

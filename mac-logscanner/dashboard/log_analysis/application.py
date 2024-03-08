@@ -5,7 +5,7 @@ from datetime import datetime
 from collections import defaultdict
 
 def analyze_application_logs(log_content):
-    # Define a pattern that matches the various application log entries
+    # pattern for application log entries
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) IP=(?P<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) UserID=(?P<userid>\w+) Action=(?P<action>[A-Za-z]+) (DocumentID=(?P<documentid>\d+))? Status=(?P<status>\w+)(?: Reason=(?P<reason>[\w\s]+))?'
     
     action_counts = defaultdict(int)
@@ -15,9 +15,9 @@ def analyze_application_logs(log_content):
     
     lines = log_content.split('\n')
     for line in lines:
-        if line.strip():  # Ensure the line is not empty
+        if line.strip():  # makesure line not empty
             match = re.match(pattern, line)
-            if match:  # If the line matches the pattern
+            if match:  # if line matches the pattern
                 parsed_line = match.groupdict()
                 action = parsed_line['action']
                 status = parsed_line['status']
