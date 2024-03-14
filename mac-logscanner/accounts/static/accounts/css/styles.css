@@ -16,15 +16,22 @@ body, html {
 
 /* New CSS classes for conditional backgrounds in base*/
 .default-background {
-    background-image: url('../images/bground.jpeg'); /* Adjust the path as needed */
+    background-image: url('../images/background.webp'); /* Adjust the path as needed */
     background-size: cover;
     /*background-position: center;*/
     color: #fff;
 }
 
 .analysis-page-background {
-    background-color: #030000;
-    color: #fff;
+    background-image: url('../images/analysis-bground.png'); /* analysis page background */
+   /* background-color: #1e599b; */
+    background-size: cover;
+    background-position: cover;
+    color: #fff; /* analysis page text color */
+    font-size: medium; /* analysis page text sise */ 
+    height: 100%;
+    z-index: 1; /* Ensure the overlay is above the background image */
+    
 }
 
 .btn {
@@ -78,6 +85,7 @@ header {
     justify-content: center; /* Centers children horizontally */
     align-items: center; /* Centers children vertically, useful if you add height to header/footer */
     width: 100%; /* Ensure header and footer span the full width */
+    padding: 20px;
 }
 /* nav li {
     position: fixed;
@@ -120,7 +128,9 @@ nav a {
     margin-left: 10px;
     text-decoration: none;
     color: white;
+    font-weight: bold; /*font bold*/
     background-color: #0a5185;
+    background-image: linear-gradient(144deg,#fcf9ff,#204e9f 50%,#fffffe);
     padding: 10px 20px;
     border-radius: 5px;
 }
@@ -188,4 +198,16 @@ footer {
     background: none;
 
 }
+
+
+.large-button { /* for login and register style */
+    padding: 10px 20px; /* Adjust padding to increase button size */
+    font-size: 16px; /* Adjust font size */
+    color: white; /*font color */
+    font-weight: bold; /*font bold*/
+    border-radius: 8px;
+    background-image: linear-gradient(144deg,#fcf9ff, #204e9f 50%,#fffffe);
+}
+
+
 
