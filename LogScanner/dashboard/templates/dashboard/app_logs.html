@@ -1,10 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Application Log Analysis</h2>
-{% if analysis_results %}
-<pre>{{ analysis_results|safe }}</pre>
+<h2 class="content-padding text-color-general">Application Log Analysis</h2>
+{% if analysis_results.sql_injection_attempts %}
+    <div class="content-padding">
+        <h3 class="text-color-highlight">SQL Injection Attempts:</h3>
+        <ul class="text-color-general">
+        {% for attempt in analysis_results.sql_injection_attempts %}
+            <li>Timestamp: {{ attempt.timestamp }}, Source IP: {{ attempt.src_ip }}</li>
+        {% endfor %}
+        </ul>
+        <h3 class="text-color-warning">Description:</h3>
+        <p style="white-space: pre-wrap;" class="text-color-general">{{ analysis_results.sql_injection_description }}</p>
+    </div>
 {% else %}
-<p>No results to display.</p>
+    <p>No results to display.</p>
 {% endif %}
 {% endblock %}

@@ -1,0 +1,40 @@
+auth_log templ:///////////////////////////////////////
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Auth Log Analysis</h2>
+
+IP Attempts Section
+<div style="margin-bottom: 20px;">
+    <h3>IP Attempts:</h3>
+    {% for ip, attempts in analysis_results.ip_attempts.items %}
+        <p>{{ ip }}: {{ attempts }}</p>
+    {% endfor %}
+</div>
+
+ <!-- User Failures Section -->
+<div style="margin-bottom: 20px;">
+    <h3>User Failures:</h3>
+    {% for user, failures in analysis_results.user_failures.items %}
+        <p>{{ user }}: {{ failures }}</p>
+    {% endfor %}
+</div>
+
+<!-- Detected Vulnerabilities Section -->
+{% if analysis_results.detected_vulnerabilities %}
+    <div>
+        <h3>Detected Vulnerabilities:</h3>
+        {% for user, info in analysis_results.detected_vulnerabilities.items %}
+            <div style="margin-bottom: 10px;">
+                <h4 style="color: red; font-size: 18px;">{{ user }}</h4>
+                {% for v in info.vulnerabilities %}
+                    <p style="color: darkred; font-size: 16px;">{{ v }}: {{ info.descriptions|first }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No vulnerabilities detected.</p>
+{% endif %}
+{% endblock %}
+
