@@ -10,4 +10,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),  # Built-in logout view
      
 ]
- 
+ #converts the class-based Lg into a callable view that can be used in the URL pattern.
+ #ca marche finally
