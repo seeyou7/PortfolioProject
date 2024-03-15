@@ -9,9 +9,8 @@ body, html {
 
 /* New CSS classes pour gerer la  condition de transition */
 .default-background {
-    background-image: url('../images/background.webp'); 
+    background-image: url('../images/background.webp');
     background-size: cover;
-    /* background-position: center; */
     color: #fff;
 }
 
@@ -52,6 +51,39 @@ body, html {
     padding: 20px;
 }
 
+.login-description {
+    background-color: rgba(27 34 187 / 13%); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    padding: 20px; /* Space inside the container */
+    margin: 0 auto 20px auto; /* Centering and spacing outside the container */
+    max-width: 600px; /* Maximum width, for better readability on wide screens */
+    text-align: center; /* Center align text */
+}
+
+.login-description p {
+    color: #ffffff;
+    font-size: 1.5rem; /* Adjusted font size */
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%); /* Text shadow for depth */
+}
+
+
+.content-padding {
+    padding-left: 20px;
+}
+
+.text-color-general {
+    color: #f7efef; 
+}
+
+.text-color-highlight {
+    color: #ccb4e5; 
+}
+
+.text-color-warning {
+    color: #ff0000; /* Red for warning  */
+}
+
 
 /* test Video background specific styles it works
 #background-video {
@@ -62,42 +94,20 @@ body, html {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; /* Ensures video stays in the background */
+    z-index: -100; /* to Ensures video stays in the background */
    /* background-size: cover;
 } */
 
 header {
+    background-color: rgba(1, 1, 11, 0.192); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.89); 
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
     display: flex;
     justify-content: center; /*  children horizontally */
     align-items: center; /*  children vertically */
     width: 100%; 
 }
-/* nav li {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-nav a{
-    display: inline-block;
-    margin-left: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #0a5185;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-    
-nav li:hover {
-    opacity: 0.8; 
-
-} */
-/* nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px; /* Adds space between navigation links */
-/*} */
 nav ul {
     position: fixed;
     top: 20px;
@@ -157,7 +167,9 @@ input[type="submit"]:hover {
 
 /* c le best pour  the background image */
 .form-container label{
-    color: #E8E8E8;
+    color: #ffffff;
+    background-color: rgba(17, 17, 20, 0.366);
+    font-size: 1.1rem;
 } 
 
 .form-container input {
@@ -169,14 +181,17 @@ input[type="submit"]:hover {
 }
 
 footer {
+    background-color: rgba(1, 1, 11, 0.192); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.995); 
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
     display: flex;
     justify-content: center; 
     align-items: center; 
     position: fixed;
     bottom: 0;
-    left: 0;
+    left: 50;
     width: 100%; 
     padding: 10px;
     color: rgb(255, 255, 255);
-    background: none;
 }
