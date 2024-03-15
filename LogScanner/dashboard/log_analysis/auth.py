@@ -47,7 +47,7 @@ def analyze_auth_logs(log_content):
 
     # Account Enumeration Detection
     for user, info in account_enumeration.items():
-        if info['failure'] > 8 and info['first_success']:  # Adjust threshold as needed
+        if info['failure'] > 8 and info['first_success']:  # a modifier threshold a fur et mesure
             detected_vulnerabilities[user]["type"].append("Account Enumeration")
             detected_vulnerabilities[user]["description"].append("Multiple failed login attempts before a successful login, indicating potential account enumeration.")
 
