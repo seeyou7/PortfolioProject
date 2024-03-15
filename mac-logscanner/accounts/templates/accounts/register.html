@@ -6,7 +6,9 @@
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Register</button>
+    <button type="submit" class="large-button" role="button">Register</button>
 </form>
 </div>
 {% endblock %}
+
+
