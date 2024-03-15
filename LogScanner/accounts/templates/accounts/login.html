@@ -3,12 +3,15 @@
 {% block title %}Login{% endblock %}
 {% block content %}
 <div class="form-container">
-    
+
 <h2>Login</h2>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Login</button>
 </form>
+<div class="login-description">
+    <p> Your vigilant partner in the digital realm. Log in to unveil powerful tools designed to scan, and analyze, your Devices from unseen vulnerabilities.</p>
+</div>
 </div>
 {% endblock %}
