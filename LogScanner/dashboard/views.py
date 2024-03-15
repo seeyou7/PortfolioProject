@@ -30,11 +30,11 @@ def app_logs_view(request):
             analysis_results = analyze_application_logs(log_content)
 
                 # verif anal_results si dictionary and format it
-            if isinstance(analysis_results, dict):
-                analysis_results = json.dumps(analysis_results, indent=4)
+    #         if isinstance(analysis_results, dict):
+    #             # analysis_results = json.dumps(analysis_results, indent=4)
 
-    else:
-            analysis_results = "Application log file not found."
+    # else:
+    #         analysis_results = "Application log file not found."
 
     # except Exception as e:
     #     # Catch any exception and return a simple error message
@@ -92,7 +92,7 @@ def network_logs_view(request):
             if isinstance(analysis_results, dict):
                 analysis_results = json.dumps(analysis_results, indent=4)
     else:
-        analysis_results = "Application log file not found." 
+        analysis_results = "Network log file not found." 
 
     # except Exception as e:
     #     # pour catcher toutes exept et returner une error simpl (ok par error pour le moment)
@@ -102,7 +102,18 @@ def network_logs_view(request):
         'is_analysis_page': True,
         'analysis_results': analysis_results,  # en passe formatted json pour l'afficher sur la template (ok)
     }
-    return render(request, 'dashboard/app_logs.html', context)
+    return render(request, 'dashboard/network_logs.html', context)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
