@@ -16,7 +16,7 @@ def analyze_application_logs(log_content):
             if match:
                 parsed_line = match.groupdict()
                 
-                # Check for SQL Injection in the payload
+                # Check 2 SQL Injection in the payload
                 if "SELECT" in parsed_line.get('payload', '') and "--" in parsed_line.get('payload', ''):
                     sql_injection_attempts.append(parsed_line)
 
@@ -33,12 +33,12 @@ def analyze_application_logs(log_content):
 ).strip()
 
   
-    # Compilation of analysis results
+    # Compilation  A.results
     analysis_results = {
         'sql_injection_attempts': sql_injection_attempts,
     }
 
-    # Including the SQL injection description only if SQL injection attempts are detected
+    # IncludE SQL injection description if SQL injec attempts are WAS detected
     if sql_injection_attempts:
         analysis_results['sql_injection_description'] = sql_injection_description
     
