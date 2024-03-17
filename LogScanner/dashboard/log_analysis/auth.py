@@ -25,8 +25,7 @@ def analyze_auth_logs(log_content):
             detected_vulnerabilities[user]["type"].append("Brute Force Attack")
             detected_vulnerabilities[user]["description"].append("Numerous failed login attempts indicating a possible brute force attack.")
 
-    # Consolider le 
-     results into a more informative structure
+    # Consolider le results into a more informative structure
     analysis_results = {
         'ip_attempts': dict(ip_attempts),
         'user_failures': dict(user_failures),
