@@ -36,8 +36,14 @@ Access `http://localhost:8000` in your browser to view the Detector application.
 - User-friendly frontend interface for ease of use.
 
 ## Authors
-- **Younes SABER** - [GitHub](https://github.com/seeyou7) - Software Engineering Student passionate about new technologies and cybersecurity.
+- **Younes SABER** - [GitHub](https://github.com/seeyou7) - Software Engineering Student passionate about new technologies and cybersecurity. [LinkedIn](https://fr.linkedin.com/in/younes-saber-205686198)
 
-- **Saima RIAZ** - [GitHub](https://github.com/saima-riaz) - Software Engineering Student with a keen interest in cybersecurity solutions.
+- **Saima RIAZ** - [GitHub](https://github.com/saima-riaz) - Software Engineering Student with a keen interest in cybersecurity solutions. [LinkedIn](https://fr.linkedin.com/in/saima-riaz-178ab7194)
 
 Both students at Holberton School Paris, we collaborated on every aspect of this project, from frontend to backend development, to bring Detector to life as part of our portfolio.
+
+## Additional Resources
+- [Final Project Blog Article](https://medium.com/@ysaberyo/detector-simplifying-security-log-analysis-for-everyone-172d8be251a7)
+
+## Licensing
+This project is licensed under the MIT License - see the LICENSE.md file for details.
