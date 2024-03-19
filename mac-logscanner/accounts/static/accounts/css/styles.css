@@ -1,36 +1,22 @@
-/* Reset CSS */
-* {
-    margin: 15;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body, html {
     height: 100%;
-    margin: 0; /* Uncomment this to remove default margin */
+    margin: 0;
     /* background-image: url('{% static "accounts/images/background.webp" %}'); */
     background-size: cover;
-    /*background-position: center; /* Corrected to 'center' */
+    /* background-position: center; Corrected to 'center' */
     color: #fff;
 }
 
-/* New CSS classes for conditional backgrounds in base*/
+/* New CSS classes pour gerer la  condition de transition */
 .default-background {
-    background-image: url('../images/background.webp'); /* Adjust the path as needed */
+    background-image: url('../images/bground.webp');
     background-size: cover;
-    /*background-position: center;*/
     color: #fff;
 }
 
 .analysis-page-background {
-    background-image: url('../images/analysis-bground.png'); /* analysis page background */
-   /* background-color: #1e599b; */
-    background-size: cover;
-    background-position: cover;
-    color: #fff; /* analysis page text color */
-    font-size: medium; /* analysis page text sise */ 
-    height: 100%;
-    z-index: 1; /* Ensure the overlay is above the background image */
+    background-color: #040403;
+    color: #fff;
     
 }
 
@@ -38,32 +24,79 @@ body, html {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    color: #fff; /* Text color */
-    text-decoration: none; /* Remove underline from links */
-    border-radius: 5px; /* Rounded corners for the button */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+    color: #fff; 
+    text-decoration: none; /* Remove underline from links to apply in end of the prjjjjjjj */
+    border-radius: 5px; /* Rounded corners  button */
+    transition: background-color 0.3s; /* effet Smooth hover effect */
 }
 .app-logs-btn {
-    background-color: #4E9A06; /* Green */
+    background-color: #4E9A06;
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
+    border-radius: 8px;
+    font-weight: bold;
+   
 }
 
 .auth-logs-btn {
-    background-color: #C4A000; /* Amber */
+    background-color: #C4A000; /* ombre */
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
+    border-radius: 8px;
+    font-weight: bold;
+    
+
 }
 
 .network-logs-btn {
-    background-color: #3465A4; /* Blue */
+    background-color: #3465A4; 
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
+    border-radius: 8px;
+    font-weight: bold;
+    
+   
 }
 
 .btn:hover {
-    background-color: #083c61; /* Darker shade on hover */
+    background-color: #083c61; /*  shade on hover */
 }
 
 .dashboard-container {
-    text-align: center; /* Center the content */
+    text-align: center; 
     margin: auto;
-    width: 80%; /* Adjust based on your design */
+    width: 80%; 
     padding: 20px;
+}
+
+.login-description {
+    background-color: rgba(27 34 187 / 13%); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    padding: 20px; /* Space inside the container */
+    margin: 0 auto 20px auto; /* Centering and spacing outside the container */
+    max-width: 600px; /* Maximum width, for better readability on wide screens */
+    text-align: center; /* Center align text */
+}
+
+.login-description p {
+    color: #ffffff;
+    font-size: 1.5rem; /* Adjusted font size */
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%); /* Text shadow for depth */
+}
+
+
+.content-padding {
+    padding-left: 20px;
+}
+
+.text-color-general {
+    color: #f7efef; 
+}
+
+.text-color-highlight {
+    color: #f4020f; 
+}
+
+.text-color-warning {
+    color: #ff0000; /* Red for warning  */
 }
 
 
@@ -76,50 +109,27 @@ body, html {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100; /* Ensures video stays in the background */
+    z-index: -100; /* to Ensures video stays in the background */
    /* background-size: cover;
 } */
 
 header {
+    background-color: rgba(1, 1, 11, 0.192); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.89); 
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
     display: flex;
-    justify-content: center; /* Centers children horizontally */
-    align-items: center; /* Centers children vertically, useful if you add height to header/footer */
-    width: 100%; /* Ensure header and footer span the full width */
-    padding: 20px;
+    justify-content: center; /*  children horizontally */
+    align-items: center; /*  children vertically */
+    width: 100%; 
 }
-/* nav li {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-nav a{
-    display: inline-block;
-    margin-left: 10px;
-    text-decoration: none;
-    color: white;
-    background-color: #0a5185;
-    padding: 10px 20px;
-    border-radius: 5px;
-}
-    
-nav li:hover {
-    opacity: 0.8; 
-
-} */
-/* nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px; /* Adds space between navigation links */
-/*} */
 nav ul {
     position: fixed;
     top: 20px;
     right: 20px;
     list-style: none; /* Removes bullet points */
-    margin: 0; /* Removes default margin */
-    padding: 0; /* Removes default padding */
+    margin: 0; 
+    padding: 0; 
     display: flex; /* Lays out the list items in a row */
 }
 
@@ -127,12 +137,15 @@ nav a {
     display: inline-block;
     margin-left: 10px;
     text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
     color: white;
-    font-weight: bold; /*font bold*/
-    background-color: #0a5185;
-    background-image: linear-gradient(144deg,#fcf9ff,#204e9f 50%,#fffffe);
+    background-image: linear-gradient(144deg,#fcf9ff, #e38810 50%,#262625);
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 3px 3px #90b6ce;
+    
 }
 
 nav a:hover {
@@ -145,12 +158,12 @@ nav a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 160px;
-    background: rgba(58, 69, 74, 0.13); /* Corrected RGBA syntax */
+    padding: 100px;
+    background: rgba(58, 69, 74, 0.13); /*  RGBA syntax a verif */
     border-radius: 10px;
     box-shadow: 0 4px 8px #90b6ce;
     width: fit-content;
-    min-width: 150px;
+    min-width: 100px;
     color: #fff; /* Text color */
 }
 
@@ -159,11 +172,11 @@ input[type="text"], input[type="password"], input[type="email"], input[type="sub
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
-    box-sizing: border-box; /* Ensures padding doesn't increase the element's size */
+    box-sizing: border-box; 
 }
 
 input[type="submit"] {
-    background-color: #c92843; /* Button color */
+    background-color: #c92843; 
     color: white;
     cursor: pointer;
 }
@@ -172,42 +185,44 @@ input[type="submit"]:hover {
     opacity: 0.8;
 }
 
-/* Adjustments for better visibility against the background image */
+/* c le best pour  the background image */
 .form-container label{
-    color: #E8E8E8;
+    color: #ffffff;
+    background-color: rgba(17, 17, 20, 0.366);
+    font-size: 1.1rem;
 } 
 
 .form-container input {
-    color: #0c0b0b; /* Text color for better visibility */
+    color: #0c0b0b; /* color for better visibility according to bk */
 }
 
 .form-container input::placeholder {
-    color: #B0B0B0; /* Placeholder text color */
+    color: #B0B0B0; 
 }
 
 footer {
+    background-color: rgba(1, 1, 11, 0.192); /* Semi-transparent white background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.995); 
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
     display: flex;
-    justify-content: flex-end; /* Aligns footer content to the right */
-    align-items: center; /* Centers footer content vertically */
+    justify-content: center; 
+    align-items: center; 
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%; /* Ensures footer spans the full width of the viewport */
+    left: 50;
+    width: 100%; 
     padding: 10px;
     color: rgb(255, 255, 255);
-    background: none;
-
 }
-
-
 .large-button { /* for login and register style */
+    display: inline-block;
     padding: 10px 20px; /* Adjust padding to increase button size */
     font-size: 16px; /* Adjust font size */
     color: white; /*font color */
     font-weight: bold; /*font bold*/
     border-radius: 8px;
-    background-image: linear-gradient(144deg,#fcf9ff, #204e9f 50%,#fffffe);
+    box-shadow: 0 3px 3px #dee5e9;
+    text-shadow: 4px 4px 4px rgb(10 9 9 / 93%);
+    background-image: linear-gradient(144deg,#fcf9ff, #e38810 50%,#262625);
 }
-
-
-
