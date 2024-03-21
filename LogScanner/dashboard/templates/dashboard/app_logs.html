@@ -2,11 +2,11 @@
 
 {% block content %}
 <h2 class="content-padding text-color-general">Application Log Analysis</h2>
-{% if analysis_results.sql_injection_attempts %}
+{% if analysis_results.sql_injection_attempts %}<!-- check if there is sql in result-->
     <div class="content-padding">
         <h3 class="text-color-highlight">SQL Injection Attempts:</h3>
         <ul class="text-color-general">
-        {% for attempt in analysis_results.sql_injection_attempts %}
+        {% for attempt in analysis_results.sql_injection_attempts %}<!-- loop trought each sql inject-->
             <li>Timestamp: {{ attempt.timestamp }}, Source IP: {{ attempt.src_ip }}</li>
         {% endfor %}
         </ul>

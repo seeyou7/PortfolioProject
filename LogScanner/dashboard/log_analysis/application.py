@@ -1,8 +1,9 @@
 from django.conf import settings
-import re
+import re # py regular express module for txt matching ok
 from datetime import datetime
 from collections import defaultdict
-
+#create dict with defaul value for non exist key
+ 
 
 def analyze_application_logs(log_content):
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) IP=(?P<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) SrcPort=(?P<src_port>\d+) DestIP=(?P<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) DestPort=(?P<dest_port>\d+) Action=(?P<action>\w+) (Payload="(?P<payload>.+?)")? Status=(?P<status>\w+)(?: Reason=(?P<reason>.+))?'
@@ -29,7 +30,15 @@ def analyze_application_logs(log_content):
     "loss, data theft, and loss of data integrity. Mitigation strategies include\n"
     "validating and sanitizing all user inputs, using prepared statements with\n"
     "parameterized queries, and employing ORM frameworks that reduce the risk of SQLi.\n"
-    "www.google.com "
+    "in another words:\n"
+    
+    "Think of your application as a secure house, \n"
+    "and SQL Injection is akin to a cunning thief who manipulates the lock instead of using the correct key.\n"
+    "This manipulation allows unauthorized access to your data, akin to a thief entering your house,\n"
+    "viewing your personal belongings, taking valuable information, or even leaving malicious items behind,\n"
+    "all without your permission. The impact of such breaches can range from data loss and theft to a compromise in data integrity.\n"
+    "for more details check :\n " 
+    " https://fr.wikipedia.org/wiki/Injection_SQL "
 ).strip()
 
   

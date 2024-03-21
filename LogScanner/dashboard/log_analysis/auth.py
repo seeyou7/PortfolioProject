@@ -23,7 +23,7 @@ def analyze_auth_logs(log_content):
     for user, count in user_failures.items():
         if count > 6:  # A AJUSTER SELON LA TAILLE DU LOG 
             detected_vulnerabilities[user]["type"].append("Brute Force Attack")
-            detected_vulnerabilities[user]["description"].append("Numerous failed login attempts indicating a possible brute force attack.")
+            detected_vulnerabilities[user]["description"].append("Numerous failed login attempts indicating a possible brute force attack. check https://fr.wikipedia.org/wiki/Attaque_par_force_brute")
 
     # Consolider le results into a more informative structure
     analysis_results = {

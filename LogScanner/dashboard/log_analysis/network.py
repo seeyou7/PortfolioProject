@@ -3,7 +3,7 @@ import re
 from collections import defaultdict
 from django.conf import settings
 
-def analyze_network_logs(log_content, ddos_threshold=100,):
+def analyze_network_logs(log_content, ddos_threshold=56,):
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) IP=(?P<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) SrcPort=(?P<src_port>\d+) DestIP=(?P<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) DestPort=(?P<dest_port>\d+) Action=(?P<action>\w+) (Payload="(?P<payload>.+?)")? Status=(?P<status>\w+)(?: Reason=(?P<reason>.+))?'
 
     ddos_attempts = defaultdict(int)

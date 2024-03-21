@@ -5,18 +5,9 @@
 {% if analysis_results.vulnerabilities_detected %}
     <div class="content-padding">
         {% if analysis_results.potential_ddos %}
-            <h3 class="text-color-highlight">Potential DDoS Attacks:</h3>
+            <h3 class="text-color-highlight">Potential DDoS Attacks Detected:</h3>
             <ul class="text-color-general">
             {% for dest_ip, count in analysis_results.potential_ddos.items %}
-                <li>Destination IP: {{ dest_ip }}, Attempts: {{ count }}</li>
-            {% endfor %}
-            </ul>
-        {% endif %}
-        
-        {% if analysis_results.unauthorized_access_attempts %}
-            <h3 class="text-color-warning">Unauthorized Access Attempts:</h3>
-            <ul class="text-color-general">
-            {% for dest_ip, count in analysis_results.unauthorized_access_attempts.items %}
                 <li>Destination IP: {{ dest_ip }}, Attempts: {{ count }}</li>
             {% endfor %}
             </ul>
@@ -27,7 +18,7 @@
     </div>
 {% else %}
     <div class="content-padding">
-        <p class="text-color-info">No Vulnerability or malicious attempts found.</p>
+        <p class="text-color-info">{{ analysis_results.summary }}</p>
     </div>
 {% endif %}
 {% endblock %}

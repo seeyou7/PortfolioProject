@@ -9,7 +9,7 @@ body, html {
 
 /* New CSS classes pour gerer la  condition de transition */
 .default-background {
-    background-image: url('../images/hello.png');
+    background-image: url('../images/background.webp');
     background-size: cover;
     color: #fff;
 }
