@@ -19,7 +19,7 @@ def analyze_auth_logs(log_content):
                 if parsed_line['status'] == 'failure':
                     user_failures[parsed_line['username']] += 1
 
-    # BR Detection
+    # BR Detection  the number of failed login attempts for each user
     for user, count in user_failures.items():
         if count > 6:  # A AJUSTER SELON LA TAILLE DU LOG 
             detected_vulnerabilities[user]["type"].append("Brute Force Attack")
